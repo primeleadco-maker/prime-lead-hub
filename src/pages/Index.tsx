@@ -1,7 +1,28 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Users } from "lucide-react";
+import { ArrowRight, Users, Quote } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
+
+const testimonials = [
+  {
+    name: "Sarah Mitchell",
+    role: "Real Estate Agent",
+    location: "London, UK",
+    quote: "Prime Lead Company transformed my business. I went from struggling to find clients to having a consistent pipeline of qualified buyers every month.",
+  },
+  {
+    name: "Raj Patel",
+    role: "Property Broker",
+    location: "Mumbai, India",
+    quote: "The leads I get are genuinely interested in buying. The quality is far better than anything I tried before. Highly recommend their services.",
+  },
+  {
+    name: "Maria Santos",
+    role: "Real Estate Consultant",
+    location: "São Paulo, Brazil",
+    quote: "Professional team, excellent communication, and most importantly - results. My seller listings have increased significantly since working with them.",
+  },
+];
 
 const Index = () => {
   return (
@@ -87,6 +108,34 @@ const Index = () => {
               <h3 className="text-lg font-semibold text-foreground mb-2">Direct Delivery</h3>
               <p className="text-muted-foreground">Leads delivered straight to you for immediate follow-up.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-16 bg-muted/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">What Our Clients Say</h2>
+            <p className="text-muted-foreground">Real estate professionals trust us to deliver results</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="bg-background rounded-xl p-8 shadow-sm border border-border relative"
+              >
+                <Quote className="h-8 w-8 text-primary/20 absolute top-6 right-6" />
+                <p className="text-muted-foreground mb-6 italic leading-relaxed">
+                  "{testimonial.quote}"
+                </p>
+                <div className="border-t border-border pt-4">
+                  <p className="font-semibold text-foreground">{testimonial.name}</p>
+                  <p className="text-sm text-primary">{testimonial.role}</p>
+                  <p className="text-sm text-muted-foreground">{testimonial.location}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
