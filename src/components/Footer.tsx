@@ -9,7 +9,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
-            <img src={logo} alt="Prime Lead Company" className="h-12 w-auto mb-4" />
+            <div className="flex items-center gap-3 mb-4">
+              <img src={logo} alt="Prime Lead Company" className="h-12 w-auto" />
+              <span className="text-lg font-bold text-foreground">Prime Lead Company</span>
+            </div>
             <p className="text-muted-foreground text-sm mb-4">
               Performance-focused lead generation for real estate professionals worldwide.
             </p>
