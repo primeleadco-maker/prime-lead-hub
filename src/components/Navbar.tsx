@@ -22,8 +22,9 @@ const Navbar = () => {
     <nav className="bg-background border-b border-border sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center gap-3">
             <img src={logo} alt="Prime Lead Company" className="h-12 w-auto" />
+            <span className="text-xl font-bold text-primary hidden sm:block">Prime Lead Company</span>
           </Link>
 
           {/* Desktop Navigation */}

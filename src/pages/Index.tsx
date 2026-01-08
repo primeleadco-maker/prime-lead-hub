@@ -2,6 +2,12 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Users, Quote } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const testimonials = [
   {
@@ -21,6 +27,33 @@ const testimonials = [
     role: "Real Estate Consultant",
     location: "São Paulo, Brazil",
     quote: "Professional team, excellent communication, and most importantly - results. My seller listings have increased significantly since working with them.",
+  },
+];
+
+const faqs = [
+  {
+    question: "How do you generate leads?",
+    answer: "We use targeted Facebook and Instagram advertising campaigns optimized for real estate professionals. Our proven funnel system captures interested buyers and sellers in your specific market area.",
+  },
+  {
+    question: "What kind of leads can I expect?",
+    answer: "You'll receive qualified buyer and seller leads who have actively expressed interest in real estate services. Each lead includes contact information and their specific requirements.",
+  },
+  {
+    question: "How quickly will I start receiving leads?",
+    answer: "Most clients start seeing leads within the first week of campaign launch. We optimize continuously to improve lead quality and volume over time.",
+  },
+  {
+    question: "Do you work with agents outside of India?",
+    answer: "Yes! We work with real estate professionals globally including UK, USA, UAE, Australia, and more. Our strategies are customized for each market.",
+  },
+  {
+    question: "What is your pricing model?",
+    answer: "We offer flexible pricing based on your market and goals. Contact us for a free strategy call where we'll discuss a custom plan that fits your budget and objectives.",
+  },
+  {
+    question: "How do I receive the leads?",
+    answer: "Leads are delivered directly to you via your preferred method - email, WhatsApp, CRM integration, or all three. You get real-time notifications so you can follow up immediately.",
   },
 ];
 
@@ -137,6 +170,28 @@ const Index = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">Frequently Asked Questions</h2>
+            <p className="text-muted-foreground">Got questions? We've got answers.</p>
+          </div>
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, index) => (
+              <AccordionItem key={index} value={`item-${index}`}>
+                <AccordionTrigger className="text-left text-foreground">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 
