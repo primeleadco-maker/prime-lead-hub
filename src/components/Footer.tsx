@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -8,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-lg font-bold text-foreground mb-4">Prime Lead Company</h3>
+            <img src={logo} alt="Prime Lead Company" className="h-12 w-auto mb-4" />
             <p className="text-muted-foreground text-sm mb-4">
               Performance-focused lead generation for real estate professionals worldwide.
             </p>
